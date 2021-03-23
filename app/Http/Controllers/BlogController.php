@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use App\Models\Tbl_blogs;
 
 class BlogController extends Controller
 {
@@ -20,4 +22,26 @@ class BlogController extends Controller
 
         return view('blog',["blog"=>$posts[$post]]);
     }
+
+    /* Below as example of getting data from DB */
+    public function blog_db_example($slug)
+    {
+       
+        $post = DB::table('tbl_blogs')->where('slug',$slug)->first();
+        
+        if(!$post)
+        {
+            abort(404);
+        }
+
+        return view('blog_from_db',["blog"=>$post]);
+    }
+
+     /* Below as example of getting data from Model */
+     public function blog_db_model_example($slug)
+     {
+        return view('blog_from_db',[
+            "blog" => Tbl_blogs::where('slug',$slug)->firstOrFail()
+            ]);
+     }
 }

@@ -85,3 +85,14 @@ Route::get('blog/{post}',function($post){
  * here calling URL will be /blog_from_controller/my-first-post
  */
 Route::get('blog_from_controller/{post}','App\Http\Controllers\BlogController@blog_posts');
+
+
+/**
+ * Example of bring blog data from db
+ */
+Route::get('blog_from_db_example/{post}','App\Http\Controllers\BlogController@blog_db_example');
+
+/**
+ * Example of bring blog data from db
+ */
+Route::get('blog_from_model_db_example/{post}','App\Http\Controllers\BlogController@blog_db_model_example');
