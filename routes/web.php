@@ -102,5 +102,9 @@ Route::get('blog_from_model_db_example/{post}','App\Http\Controllers\BlogControl
  * Example of html template
  */
 Route::get('html_template','App\Http\Controllers\viewController@example');
+/**
+ * Example of html template second method
+ */
+Route::get('html_template_2','App\Http\Controllers\viewController@example_2');
 
 

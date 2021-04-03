@@ -10,5 +10,10 @@ class viewController extends Controller
     {
         return view('view_example');
     }
+
+    public function example_2()
+    {
+        return view('view_example_2');
+    }
     
 }
